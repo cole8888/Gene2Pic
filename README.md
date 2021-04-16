@@ -22,6 +22,7 @@ To run the C program:
 - Run: `./gene2pic X` (X is the name of the file)
 
 On a Ryzen 3700X it is able to go through the entire Human genome in less than 27 seconds, but it takes fairly long for lodepng to save such a huge image.
+
 ![Image](https://github.com/cole8888/Gene2Pic/blob/main/C_Example.png)
 
 I've provided several example genetic sequences as well as their expected outputs you can try out if you'd like. You can find additional genetic sequences at https://www.ncbi.nlm.nih.gov/genome/
