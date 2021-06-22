@@ -5,7 +5,7 @@ Inspired by [this](https://www.reddit.com/r/dataisbeautiful/comments/mg1cxr/oc_e
 
 The Python and C programs both do the same thing, except the Python version has more functionality and the C version is much faster and tends to produce smaller image file sizes. I'd reccomend using the C version because it is more efficient at encoding the images. Both programs automatically treat Uracil (U) as Thymine (T).
 
-To run the Python script: `python3 gene_to_pic_multi_test.py`
+To run the Python script: `python3 gene2pic.py`
 
 Arguments:
 - Read the sequence from a file: `--file X` (X is the name of the file)
