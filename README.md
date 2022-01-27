@@ -1,9 +1,28 @@
 # Gene2Pic
 Represents a genetic sequence as an image.
 
-Inspired by [this](https://www.reddit.com/r/dataisbeautiful/comments/mg1cxr/oc_entire_genome_of_covid_virus_sarscov2/) post. I didn't see the OP provide any source code, so I made my own programs that could handle any genetic sequence.
+Inspired by [this](https://www.reddit.com/r/dataisbeautiful/comments/mg1cxr/oc_entire_genome_of_covid_virus_sarscov2/) post. I didn't see the author provide any source code, so I made my own programs that could handle any genetic sequence.
 
-The Python and C programs both do the same thing, except the Python version has more functionality and the C version is much faster and tends to produce smaller image file sizes. I'd reccomend using the C version because it is more efficient at encoding the images. Both programs automatically treat Uracil (U) as Thymine (T).
+The Python and C programs do almost the same thing. The C version is much faster, has serpentine mode, and tends to produce smaller image file sizes. I'd reccomend using the C version if you can because it is more efficient at encoding the images. Both programs automatically treat Uracil (U) as Thymine (T).
+
+<hr>
+
+To run the C program:
+- Clone this repository: `git clone https://github.com/cole8888/Gene2Pic`
+- Move into the folder: `cd Gene2Pic`
+- Compile: `make`
+- Run: `./gene2pic <INPUT_FILE>` (Where \<INPUT_FILE\> is the name of the file)
+
+Optional arguments:
+- Upscale the final image: `./gene2pic <INPUT_FILE> <SCALE>` (Where \<SCALE\> is a positive integer)
+- Flip every second row: `./gene2pic <INPUT_FILE> <SERPENTINE>` (Where \<SERPENTINE\> is "serpentine" without the quotes)
+- Upscale and flip every second row: `./gene2pic <INPUT_FILE> <SERPENTINE> <SCALE>`
+
+On a Ryzen 3700X it is able to go through the entire Human genome in less than 24 seconds. Most of that time is spent reading from the disk and making sure that only valid characters are stored in memory. It also takes fairly long for lodepng to save such a huge image.
+
+![Image](https://github.com/cole8888/Gene2Pic/blob/main/C_Example.png)
+
+<hr>
 
 To run the Python script: `python3 gene2pic.py`
 
@@ -16,14 +35,7 @@ Arguments:
 
 ![Image](https://github.com/cole8888/Gene2Pic/blob/main/Python_Example.png)
 
-To run the C program:
-- Place the lodepng.c and lodepng.h files into the same directory as gene2pic.c
-- Compile: `gcc gene2pic.c lodepng.c -Wall -Wextra -fopenmp -lm -o gene2pic`
-- Run: `./gene2pic X` (X is the name of the file)
-
-On a Ryzen 3700X it is able to go through the entire Human genome in less than 27 seconds, but it takes fairly long for lodepng to save such a huge image.
-
-![Image](https://github.com/cole8888/Gene2Pic/blob/main/C_Example.png)
+<hr>
 
 I've provided several example genetic sequences as well as their expected outputs you can try out if you'd like. You can find additional genetic sequences at https://www.ncbi.nlm.nih.gov/genome/
 Before using a sequence, open it and make sure that there are no headers in the data. You can remove these using find and replace with regex.
