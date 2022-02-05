@@ -37,7 +37,7 @@ Arguments:
 
 <hr>
 
-I've provided several example genetic sequences as well as their expected outputs you can try out if you'd like. You can find additional genetic sequences at https://www.ncbi.nlm.nih.gov/genome/
+I've provided several example genetic sequences as well as their expected outputs you can try out if you'd like. You can find additional genetic sequences at https://www.ncbi.nlm.nih.gov/genome/.
 Before using a sequence, open it and make sure that there are no headers in the data. You can remove these using find and replace with regex.
 
 Here's some examples:
